@@ -19,7 +19,33 @@ class Conjunto:
         self.lista_de_objetos: [Elemento] = []
         self.nombre: str = nombre_del_conjunto
         self.__class__.contador += 1
-        self.
+
+    def contiene(self, objeto) -> bool:
+        if objeto in self.lista_de_objetos:
+            return True
+        else:
+            return False
+
+    def agregar_elemento(self, objeto):
+        if objeto not in self.lista_de_objetos:
+            self.lista_de_objetos.append(objeto)
+        else:
+            pass
+
+    def unir(self, conjunto):
+        self.lista_de_objetos.append(conjunto)
+
+    @classmethod
+    def intersectar(cls, conjunto_1, conjunto_2):
+        cls.conjuntos_intersectados = conjunto_1.intersection(conjunto_2)
+        return cls.conjuntos_intersectados
+
+    def __str__(self):
+        return f"Conjunto{self.conjuntos_intersectados}"
+
+
+
+
 
 elemento_1 = Elemento("Emanuel")
 
